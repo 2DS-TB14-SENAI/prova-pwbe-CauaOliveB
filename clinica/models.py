@@ -13,6 +13,10 @@ class Medico(models.Model):
     crm = models.CharField(max_length=50, unique=True)
     email = models.EmailField(max_length=254, blank=True, null=True)
 
+    def __str__(self):
+        return f"{self.nome}-{self.especialidade}-{self.crm}"
+
+
 class Consulta(models.Model):
     paciente = models.CharField(max_length=100)
     data = models.DateTimeField( auto_now=False, auto_now_add=False)
@@ -24,3 +28,6 @@ class Consulta(models.Model):
     ]
 
     status = models.CharField(max_length=4, choices=choices)
+
+    def __str__(self):
+        return f"{self.paciente}-{self.data}-{self.medico}"

@@ -20,4 +20,5 @@ def criar_consulta(request):
 
 @api_view(['GET'])
 def detalhes_consulta(request):
-    return Consulta
+    consulta_info = Consulta.objects.all()
+    return consulta_info
