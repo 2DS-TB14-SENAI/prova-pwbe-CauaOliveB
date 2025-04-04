@@ -24,4 +24,4 @@ def detalhes_consulta(request):
     if request.method == 'GET':
         consulta_info = Consulta.objects.all()
         return Response(consulta_info, status=status.HTTP_200_OK)
-    return render(request, '')
+    return render(request, 'form_consulta.htm')
