@@ -10,11 +10,18 @@ def listar_medicos(request):
 
 @api_view(['POST'])
 def criar_consulta(request):
-        pacientes = request.data.get('paciente')
-        data = request.data.get('data')
-        medico = request.data.get('medico')
-        status = request.data.get('status')
+        pacientes = request.POST.get('paciente')
+        data = request.POST.get('data')
+        medico = request.POST.get('medico')
+        status = request.POST.get('status')
         return Response({'Criado com Sucesso!'}, status=status.HTTP_201_CREATED)
+
+
+
+        titulo = request.POST.get('titulo')
+        descricao = request.POST.get('descricao')
+        Tarefa.objects.create(titulo=titulo, descricao=descricao)
+        return redirect('listar_tarefas')
 
 @api_view(['GET'])
 def detalhes_consulta(request):
