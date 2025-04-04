@@ -22,7 +22,7 @@ Implementar uma aplicação Django seguindo o padrão Model-Template-View para g
   - `medico` (ForeignKey para Médico) = **models.ForeignKey(Medico, on_delete=models.CASCADE)**
   - `status` (CharField com choices: ['agendado', 'realizado', 'cancelado'])
 
-## 🌐 Views e URLs
+## 🌐 Views e URLs-
 
 ### Views obrigatórias:
 1. `listar_medicos` - Lista todos os médicos cadastrados
