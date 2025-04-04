@@ -11,6 +11,7 @@ class Medico(models.Model):
     ]
     especialidade = models.CharField(max_length=3, choices=choices)
     crm = models.CharField(max_length=50, unique=True)
+    
     email = models.EmailField(max_length=254, blank=True, null=True)
 
     def __str__(self):
